@@ -100,12 +100,14 @@ sol = SolarSystem.new({
 puts "Which planet would you like to learn about?"
 
 def get_planet array
+  # Print out list of planets with 'Exit' option at the end
   array.each_with_index do |planet, index|
     puts "#{index + 1}. #{planet.name}"
   end
   puts "#{array.length + 1}. Exit"
   puts
 
+  # Validate that user input corresponds to a number option from the list
   input = gets.chomp.to_i
   until (1..(array.length + 1)).to_a.include? input
     print "Please input a number between 1 and #{array.length + 1} > "
